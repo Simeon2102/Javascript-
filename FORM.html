@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Interactif</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<style>
+    body{
+        background-color: #366d19;
+    
+    }
+    .popup {
+    display: none;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #403e3e;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}
+
+.hidden {
+    display: none;
+}
+
+.buttons {
+    margin-top: 20px;
+    margin: 5px;
+    padding: 10px 20px;
+  
+    color: #297070;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+ 
+    color: #2d2a2a;
+    cursor: pointer;
+}
+#photos {
+    max-width: 220px; 
+    height: auto; 
+    margin: 5px;
+    padding: 8px 20px;
+   
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #0056b3;
+    margin: 5px;
+    padding: 10px 20px;
+    
+    color: #297070;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons button:focus {
+    outline: none;
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #297070;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+</style>
+<body>
+        
+    
+   <!-- Cette section contient des boutons pour différentes actions -->
+
+<div class="buttons">
+
+    <!-- La balise <marquee> est utilisée pour faire défiler les boutons -->
+
+    <marquee>
+
+        <!-- Chaque bouton a un onclick attribué à une fonction JavaScript pour effectuer une action spécifique -->
+
+        <button onclick="showContactForm()">Formulaire de Contact</button>
+        <button onclick="showPresentationVideo()">Vidéo de Présentation</button>
+        <button onclick="showPhotos()">Photos</button>
+        <button onclick="showCV()">CV</button>
+
+    </marquee>
+</div>
+
+<!-- Cette section contient un formulaire de contact qui est initialement caché -->
+
+<div id="contactForm" class="popup">
+
+    <!-- Un titre pour le formulaire -->
+
+    <h2>Formulaire de Contact</h2>
+
+    <!-- Le formulaire lui-même -->
+    <form>
+        <!-- Chaque champ du formulaire est défini avec une étiquette <label> et un champ correspondant -->
+
+        <label for="name">Nom:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message"></textarea><br>
+
+        <!-- Le bouton de soumission du formulaire -->
+
+        <input type="submit" value="Envoyer">
+    </form>
+    <!-- Un bouton pour fermer le formulaire -->
+
+    <button onclick="hideContactForm()">Fermer</button>
+</div>
+
+
+    
+    <div id="presentationVideo" class="hidden">
+        <video controls>
+            <source src="Rita Ora x Netsky — Barricades (Lyric Video).mp4" type="video/mp4">
+            
+        </video>
+    </div>
+    
+    <div id="photos" class="hidden" >
+        <h2>Photos</h2>
+        <img id="photos" src="Simeon.jpg" alt="Simeon.jpg">
+        
+    </div>
+
+    
+    <div id="cv" class="hidden" style="border: 1px solid black;">
+       
+
+
+       <h1>Coordonnées</h1>
+    <p>SIMEON HAGENIMANA</p>
+    <p>5147082211</p>
+    <p>Simeonhagenimana1@gmail.com</p>
+    <p>Français - anglais</p>
+    
+    <h2>Profil</h2>
+    <p>Diplômé en installation électrique domestique et industrielle de secondaire S6</p>
+    <p>Expérience en aide-maçon</p>
+    <p>Expérience en installation électrique maison</p>
+    <p>Respect des délais et capacité à être multitâches.</p>
+    <p>Formation en programmation web et mobile en cours 2023—2025 (Institut-Teccart)</p>
+    
+    <h2>Compétences</h2>
+    <ul>
+        <li>Capacité à élaborer un plan d’installation électrique domestique</li>
+        <li>Compréhension et exécution d’un plan d’installation électrique domestique préétablie.</li>
+        <li>Excellente Collaboration en travail en équipe</li>
+        <li>Connaissance pratique pour FCLO, CUI, SAM chez MC Donald</li>
+    </ul>
+    
+    <h2>Expérience professionnelle</h2>
+    <ul>
+        <li>Stage de 9 mois en installation de lignes électrique (moyenne tension) dans la compagnie REG (RWANDA ENERGY GROUP) entre 2017 et 2019</li>
+        <li>Stage de 3 mois en installation électrique des institutions public (CHUK, centre hospitalier Universitaire de Kigali) en 2019.</li>
+        <li>Aide-maçon en 15 mois chape dalle béton construction à la Primature du Rwanda 2020.</li>
+    </ul>
+    
+    <h2>Logiciels</h2>
+    <ul>
+        <li>Web mastering html, CSS, python, PHP, C#, et Javascript</li>
+        <li>Word, PowerPoint et Outlook</li>
+        <li>Internet et réseaux sociaux.</li>
+    </ul>
+
+
+
+
+
+
+        
+    </div>
+
+    <script>
+        // Cette fonction affiche le formulaire de contact en modifiant son style pour le rendre visible.
+
+        function showContactForm() {
+            document.getElementById("contactForm").style.display = "block";
+        }
+    
+        // Cette fonction masque le formulaire de contact en modifiant son style pour le rendre invisible.
+
+        function hideContactForm() {
+            document.getElementById("contactForm").style.display = "none";
+        }
+    
+        // Cette fonction affiche la vidéo de présentation en supprimant la classe "hidden" qui la masque.
+        
+        function showPresentationVideo() {
+            document.getElementById("presentationVideo").classList.remove("hidden");
+        }
+    
+        // Cette fonction affiche les photos en supprimant la classe "hidden" qui les masque.
+        function showPhotos() {
+            document.getElementById("photos").classList.remove("hidden");
+        }
+    
+        // Cette fonction affiche le CV en supprimant la classe "hidden" qui le masque.
+        function showCV() {
+            document.getElementById("cv").classList.remove("hidden");
+        }
+    </script>
+    
+
+<a href="view.html"> <li>PARTIE_3</li></a>
+</body>
+</html>

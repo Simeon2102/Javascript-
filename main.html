@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Lamp</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #3f7d53;
+        }
+
+        .lamp {
+            border-radius: 10px;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .lamp img {
+            width: 400px;
+            height: 400px;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+        marquee{
+              background-color:darkgreen;
+            color:red;
+            font-weight:bold;
+            font-size:large;
+        }
+    </style>
+</head>
+<body>
+    <marquee>
+        <p>
+           <h1> Portail dynamique </h1>
+
+        </p>
+            </marquee>
+
+
+    <div class="lamp" id="lamp">
+        <img src="lamp_off.jpg" alt="Lamp Off" id="lampImage">
+    </div>
+    <button onclick="toggleLamp()">On/Off</button>
+
+    <script src="lamp.js"></script>
+
+    <a href="FORM.html"> <li>PARTIE_2</li></a>
+</body>
+</html>
